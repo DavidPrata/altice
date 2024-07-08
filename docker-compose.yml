@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+
+  frontend:
+    build:
+      context: .
+    ports:
+      - "4200:4200"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

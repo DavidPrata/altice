@@ -1,0 +1,28 @@
+{
+  "user_form_alticelabs_1": "Altice Labs is a company belonging to the multinational Altice Group with operators in USA, France, Portugal, Israel, UK, Germany and Dominican Republic, which operates in the Telecommunications market.",
+  "user_form_alticelabs_2": "We are collecting data on the weather condition on multiple cities and on how they affect communications. To achieve that we will need your help. Please fill in all the details on the form. At the end, submit by clicking on 'Send'.",
+  "user_form_label_country": "Which country are you from?",
+  "user_form_placeholder_country": "Select a country",
+  "user_form_label_state": "Which state are you from?",
+  "user_form_placeholder_state": "Select a state",
+  "user_form_label_city": "Which city are you from?",
+  "user_form_placeholder_city": "Select a city",
+  "user_form_label_temperature": "Temperature",
+  "user_form_placeholder_temperature": "Values in celcius (from -100 to 100)",
+  "user_form_label_rain": "Rain status",
+  "user_form_label_date": "Date",
+  "user_form_label_network": "Network power",
+  "user_form_placeholder_network": "Select a power level",
+  "user_form_label_altitude": "High altitude",
+  "user_form_placeholder_altitude": "Values in meters (from 0 to 9000)",
+  "user_form_reset": "Reset form",
+  "user_form_send": "Send form",
+  "user_form_invalid_msg": "You haven't completed the whole form yet. Please fill in all the fields.",
+  
+  "title_status": "State",
+  "title_city": "City",
+  "title_date": "Date",
+  "title_weather": "Weather state",
+  "title_network": "Network Power",
+  "title_high_altitude": "High Altitude"
+}

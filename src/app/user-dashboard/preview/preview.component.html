@@ -1,0 +1,27 @@
+<div class="albs-preview-container" *ngIf="!(isLoading$ | async)">
+  <span class="alabs-chart-title">
+    {{ city }}
+  </span>
+  <div class="wrapper-container">
+    <div class="alabs-wrapper">
+      <div
+        *ngFor="let item of data$ | async; let i = index"
+        class="bar-container"
+        [ngStyle]="{
+          left: i * 50 + 'px'
+        }"
+      >
+        <div
+          class="bar"
+          [ngStyle]="{
+            width: '40px',
+            height: item.networkPower * 20 + '%'
+          }"
+        >
+          <span class="date">{{ item.date | date : "short" }}</span>
+          <span class="alabs-power-level">{{ item.networkPower }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

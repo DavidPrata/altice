@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid d-flex justify-content-between">
+    <a class="navbar-brand" href="#">
+      <img width="150" src="./altice-logo.png" alt="altice" />
+    </a>
+    <div class="alabs-lang-container">
+      <span
+        class="alabs-lang-opt pointer"
+        [ngClass]="{ 'item-active': activeLanguage === 'en' }"
+        (click)="setActiveLanguage('en')"
+        >EN</span
+      >
+      <span> / </span>
+      <span
+        class="alabs-lang-opt pointer"
+        [ngClass]="{ 'item-active': activeLanguage === 'pt' }"
+        (click)="setActiveLanguage('pt')"
+        >PT</span
+      >
+    </div>
+  </div>
+</nav>

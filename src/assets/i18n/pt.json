@@ -1,0 +1,28 @@
+{
+  "user_form_alticelabs_1": "A Altice Labs é uma empresa pertencente ao Grupo multinacional Altice com operadores nos EUA, França, Portugal, Israel, Reino Unido, Alemanha e República Dominicana, que actua no mercado das Telecomunicações.",
+  "user_form_alticelabs_2": "Estamos a recolher dados sobre as condições meteorológicas em várias cidades e sobre a forma como estas afectam as comunicações. Para isso, precisamos da sua ajuda. Por favor, preencha todos os dados do formulário. No final, submeta-o clicando em 'Enviar'.",
+  "user_form_label_country": "Qual é o seu país?",
+  "user_form_placeholder_country": "Selecione um país",
+  "user_form_label_state": "Qual é o seu distrito?",
+  "user_form_placeholder_state": "Selecione um distrito",
+  "user_form_label_city": "Qual é a sua cidade?",
+  "user_form_placeholder_city": "Selecione uma cidade",
+  "user_form_label_temperature": "Temperatura",
+  "user_form_placeholder_temperature": "Valores em celcius (de -100 até 100)",
+  "user_form_label_rain": "Está a chover?",
+  "user_form_label_date": "Data",
+  "user_form_label_network": "Potencia de rede",
+  "user_form_placeholder_network": "Selecione um nível de potencia",
+  "user_form_label_altitude": "Altitude",
+  "user_form_placeholder_altitude": "Valores em metros (de 0 até 9000)",
+  "user_form_reset": "Redefinir o formulário",
+  "user_form_send": "Enviar formulário",
+  "user_form_invalid_msg": "Ainda não completou todo o formulário. Por favor, preencha todos os campos.",
+
+  "title_status": "Estado",
+  "title_city": "Cidade",
+  "title_date": "Data",
+  "title_weather": "Estado do tempo",
+  "title_network": "Potencia de rede",
+  "title_high_altitude": "Altitude"
+}

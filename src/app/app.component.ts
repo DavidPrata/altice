@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'altice_labs_challenge';
+
+  constructor(private translateService: TranslateService) {
+    this.translateService.addLangs(['en', 'pt']);
+    this.translateService.setDefaultLang('en');
+
+    const browserLang = this.translateService.getBrowserLang();
+    this.translateService.use(browserLang?.match(/en|pt/) ? browserLang : 'en');
+  }
 }

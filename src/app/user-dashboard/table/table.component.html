@@ -1,0 +1,61 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" translate>title_status</th>
+      <th scope="col" translate>title_city</th>
+      <th scope="col" translate>title_date</th>
+      <th scope="col" translate>title_weather</th>
+      <th scope="col" translate>title_network</th>
+      <th scope="col" translate>title_high_altitude</th>
+      <th scope="col" translate></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <th>
+        <div class="alabs-td-container">
+          <div
+            class="alabs-status"
+            [ngClass]="{
+              'alabs-bg-minor': +item.networkPower <= 2,
+              'alabs-bg-medium': +item.networkPower === 3,
+              'alabs-bg-ok': +item.networkPower > 3
+            }"
+          ></div>
+        </div>
+      </th>
+      <td>
+        <div class="alabs-td-container">
+          {{ item.country }}, {{ item.state }}, {{ item.city }}
+        </div>
+      </td>
+      <td>
+        <div class="alabs-td-container">{{ item.date | date : "short" }}</div>
+      </td>
+      <td>
+        <div class="alabs-td-container">
+          <div *ngIf="item.rainStatus" class="alabs-rain">
+            <mat-icon>cloudy_snowing</mat-icon>
+          </div>
+          <div *ngIf="item.rainStatus === false" class="alabs-sun">
+            <mat-icon>sunny</mat-icon>
+          </div>
+        </div>
+      </td>
+
+      <td>
+        <div class="alabs-td-container">{{ item.networkPower }}</div>
+      </td>
+      <td>
+        <div class="alabs-td-container">{{ item.highAltitude }} m</div>
+      </td>
+      <td>
+        <div class="alabs-td-container">
+          <button type="button" class="alabs-chart-btn" [routerLink]="['/preview', item.city]" routerLinkActive="selected">
+            <mat-icon>bar_chart</mat-icon>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

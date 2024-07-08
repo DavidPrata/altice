@@ -1,0 +1,221 @@
+.alabs-user-form-header {
+    width: 100%;
+}
+
+.alabs-user-form-header img {
+    width: 180px;
+    height: auto;
+}
+
+.alabs-user-form-header p {
+    margin-top: 10px;
+    color: #2d2d2d;
+    font-size: 16px;
+    text-align: justify;
+}
+
+form {
+    width: 100%;
+    max-width: 50rem;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 16px 1px rgba(45, 45, 45, 0.5);
+  }
+  
+  .control,
+  fieldset {
+    margin: 0.5rem 0;
+  }
+  
+  .control.no-margin {
+    margin-bottom: 0;
+  }
+  
+  .control label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    color: #303030;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .control input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #e7e7e7;
+    background-color: #f9f9f9;
+    color: #222222;
+  }
+  
+  .control select {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #e7e7e7;
+    background-color: #f9f9f9;
+    color: #142020;
+  }
+  
+  .control:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+  }
+  
+  .control:has(input[type="checkbox"]) label {
+    margin: 0;
+  }
+  
+  .control input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    max-width: none;
+    margin-right: 0.5rem;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+    color: #d9e2f1;
+  }
+  
+  .control-error {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #ff2450;
+    height: 0.5rem;
+    padding: 0.25rem 0 0 0;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 14px;
+  }
+  
+  .control-error p {
+    margin: 0;
+  }
+  
+  .control-row {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .control-row .control {
+    flex: 1;
+  }
+  
+  hr {
+    margin: 1.5rem 0;
+    border: 1px solid #147b73;
+  }
+  
+  .form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    background-color: #323232;
+    color: #fefefe;
+    cursor: pointer;
+  }
+  
+  .button:hover,
+  .button:focus {
+    background-color: #1c1c1c;
+  }
+  
+  .button-flat {
+    background-color: transparent;
+    color: #aeaeae;
+  }
+  
+  .button-flat:hover,
+  .button-flat:focus {
+    background-color: transparent;
+    color: #4e4e4e;
+  }
+  
+  [formgroupname].ng-invalid.ng-touched.ng-dirty label,
+  .control:has(.ng-invalid.ng-touched.ng-dirty) label {
+    color: #ff1456;
+  }
+  
+  [formgroupname].ng-invalid.ng-touched.ng-dirty input,
+  input.ng-invalid.ng-touched.ng-dirty {
+    background-color: #fbdcd6;
+    border-color: #f84e2c;
+  }
+  
+  .switch { 
+    position : relative ;
+    display : inline-block;
+    width : 40px;
+    height : 20px;
+    background-color: #eee;
+    border-radius: 20px;
+  }
+
+  .switch::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    top: 1px;
+    left: 1px;
+    transition: all 0.3s;
+  }
+
+  .checkbox:checked + .switch::after {
+    left : 20px; 
+  }
+  .checkbox:checked + .switch {
+    background-color: #222222;
+  }
+
+  .checkbox { 
+    display : none !important;
+ }
+
+ .mb-10 {
+    margin-bottom: 10px !important;
+ }
+
+ .w-100 {
+    width: 100% !important;
+ }
+
+ .alabs-lang-form-container {
+  margin-right: 10px;
+}
+
+.item-active {
+  font-weight: bold; /* Exemplo: tornar o texto em negrito */
+  cursor: pointer; /* Exemplo: indicar que o texto é clicável */
+}
+
+.alabs-lang-opt {
+  color: #282a2e;
+}
+
+.pointer {
+  cursor: pointer;
+}

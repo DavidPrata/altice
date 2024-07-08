@@ -1,0 +1,61 @@
+.albs-preview-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .alabs-chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #1a1a1a;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 150px;
+  }
+  
+  .wrapper-container {
+    width: 100%;
+    height: 500px;
+    padding: 0 40px;
+  }
+  
+  .alabs-wrapper {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    display: flex;
+  }
+  
+  .bar-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  
+  .bar {
+    background-color: #1a1a1a;
+  }
+  
+  .date {
+    font-size: 12px;
+    color: #ffffff;
+  }
+  
+  .alabs-power-level {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #171717;
+    color: #fff;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -70px;
+  }

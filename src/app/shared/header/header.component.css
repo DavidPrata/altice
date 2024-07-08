@@ -1,0 +1,16 @@
+.item-active {
+    font-weight: bold; /* Exemplo: tornar o texto em negrito */
+    cursor: pointer; /* Exemplo: indicar que o texto é clicável */
+  }
+
+  .alabs-lang-container {
+    margin-right: 20px;
+  }
+
+  .alabs-lang-opt {
+    color: #282a2e;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }

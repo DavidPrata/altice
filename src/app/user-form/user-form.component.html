@@ -1,0 +1,223 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="alabs-user-form-header d-flex flex-column align-items-center">
+    <div class="w-100 d-flex justify-content-between align-items-center">
+      <img src="./altice-logo.png" alt="altice" />
+      <div class="alabs-lang-form-container">
+        <span
+          class="alabs-lang-opt"
+          [ngClass]="{ 'item-active': activeLanguage === 'en' }"
+          (click)="setActiveLanguage('en')"
+          >EN</span
+        >
+        <span> / </span>
+        <span
+          class="alabs-lang-opt"
+          [ngClass]="{ 'item-active': activeLanguage === 'pt' }"
+          (click)="setActiveLanguage('pt')"
+          >PT</span
+        >
+      </div>
+    </div>
+    <p translate>user_form_alticelabs_1</p>
+    <p translate>user_form_alticelabs_2</p>
+  </div>
+
+  <hr />
+
+  <div class="row" *ngIf="!(isLoading$ | async)">
+    <!-- Select country -->
+    <div
+      [ngClass]="{
+        'col-12': (countries$ | async),
+        'col-12 col-sm-6': selectedCountry
+      }"
+    >
+      <div class="control-row">
+        <div class="control">
+          <label for="country" translate>user_form_label_country</label>
+          <select
+            id="country"
+            name="country"
+            formControlName="country"
+            (change)="onSelectCountry($event)"
+          >
+            <option value="" disabled selected translate>
+              user_form_placeholder_country
+            </option>
+            <option
+              *ngFor="let country of countries$ | async"
+              [value]="country.name"
+            >
+              {{ country.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Select state -->
+    <div class="col-12 col-sm-6" *ngIf="selectedCountry">
+      <div class="control-row">
+        <div class="control">
+          <label for="state" translate>user_form_label_state</label>
+          <select
+            id="state"
+            name="state"
+            formControlName="state"
+            (change)="onSelectState($event)"
+          >
+            <option value="" disabled selected translate>
+              user_form_placeholder_state
+            </option>
+            <!-- Assuming statesList is an array of states based on the selected country -->
+            <option *ngFor="let state of statesList" [value]="state">
+              {{ state }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Select city -->
+    <div class="col-12" *ngIf="selectedState">
+      <div class="control-row">
+        <div class="control">
+          <label for="city" translate>user_form_label_city</label>
+          <select
+            id="city"
+            name="city"
+            formControlName="city"
+            (change)="onSelectCity($event)"
+          >
+            <option value="" disabled selected translate>
+              user_form_placeholder_city
+            </option>
+            <option *ngFor="let city of citiesList" [value]="city">
+              {{ city }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Define temperature-->
+    <div
+      class="col-12 col-sm-6"
+      *ngIf="selectedCountry && selectedState && selectedCity"
+    >
+      <div class="control">
+        <label for="temperature" translate>user_form_label_temperature</label>
+        <input
+          [placeholder]="'user_form_placeholder_temperature' | translate"
+          type="number"
+          min="-100"
+          max="100"
+          id="temperature"
+          name="temperature"
+          formControlName="temperature"
+        />
+      </div>
+    </div>
+
+    <!-- Define rain status-->
+    <div
+      class="col-12 col-sm-6"
+      *ngIf="selectedCountry && selectedState && selectedCity"
+    >
+      <div class="control">
+        <div class="w-100 d-flex flex-column">
+          <label class="mb-10" for="rainStatus" translate
+            >user_form_label_rain</label
+          >
+          <input
+            type="checkbox"
+            id="toggle"
+            class="checkbox"
+            formControlName="rainStatus"
+          />
+          <label for="toggle" class="switch"></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Today date -->
+    <div
+      class="col-12"
+      *ngIf="selectedCountry && selectedState && selectedCity"
+    >
+      <div class="control">
+        <label for="date" translate>user_form_label_date</label>
+        <input
+          type="string"
+          disabled
+          id="date"
+          name="date"
+          [value]="
+            formatDateForInput(form.controls.date.value) | date : 'dd-MM-YYYY'
+          "
+        />
+      </div>
+    </div>
+
+    <!-- Network power -->
+    <div
+      class="col-12"
+      *ngIf="selectedCountry && selectedState && selectedCity"
+    >
+      <div class="control-row">
+        <div class="control">
+          <label for="networkPower" translate>user_form_label_network</label>
+          <select
+            id="networkPower"
+            name="networkPower"
+            formControlName="networkPower"
+          >
+            <option value="" disabled selected translate>
+              user_form_placeholder_network
+            </option>
+            <option [value]="1">1</option>
+            <option [value]="2">2</option>
+            <option [value]="3">3</option>
+            <option [value]="4">4</option>
+            <option [value]="5">5</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Define high altitude -->
+    <div
+      class="col-12"
+      *ngIf="selectedCountry && selectedState && selectedCity"
+    >
+      <div class="control">
+        <label for="highAltitude" translate>user_form_label_altitude</label>
+        <input
+          [placeholder]="'user_form_placeholder_altitude' | translate"
+          type="number"
+          min="0"
+          max="9000"
+          id="highAltitude"
+          name="highAltitude"
+          formControlName="highAltitude"
+        />
+      </div>
+    </div>
+  </div>
+
+  @if (form.touched && form.invalid) {
+  <p class="control-error" translate>user_form_invalid_msg</p>
+  }
+
+  <p class="form-actions">
+    <button
+      type="button"
+      class="button button-flat"
+      (click)="onReset()"
+      translate
+    >
+      user_form_reset
+    </button>
+    <button type="submit" class="button" translate>user_form_send</button>
+  </p>
+</form>
